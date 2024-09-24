@@ -18,7 +18,6 @@ class Verden {
         return false;
     }
 }
-
 class Robot {
     // gi robotten 4 attributter: navn, batteriNivaa, avstandTilParken og botType
     String name;
@@ -116,6 +115,7 @@ public class RobotOppgave {
         Spark.gaaTilDanseklubb(dagensVerden, Spark);
 
         System.out.println("--------------------");
+
         String statusTwo = Shark.giStatus();
         System.out.println(statusTwo);
         Shark.gaaTilParken(dagensVerden);
