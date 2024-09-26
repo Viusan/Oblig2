@@ -69,14 +69,14 @@ class Robot {
             System.out.println("Det er mandag idag, desverre er danseklubben stengt.");
         } else {
             if (bot.botType.equals("B-Bot")) {
-                System.out.println("Du er av riktig type robott ;)");
+                System.out.println("Du er av riktig type robot ;)");
                 if (bot.batteryLevel >= 50) {
                     System.out.println("Ser ut som at du har nok strøm for å komme deg inni klubben også.");
                 } else {
                     System.out.println("Batterikapasitetet ditt må minimum være 50%, du ligger på " + batteryLevel + ". Gå hjem og lad degselv.");
                 }
             } else {
-                System.out.println("Du er ike av riktig type robott >:(");
+                System.out.println("Du er ike av riktig type robot >:(");
             }
         }
         return true;
@@ -90,20 +90,20 @@ public class RobotOppgave {
         dagensVerden.regner = false;
         dagensVerden.dag = 8;
 
-        Robot Spark = new Robot();
+        Robot robotOne = new Robot();
         Scanner myObj = new Scanner(System.in);
-        System.out.println("Hva heter robott nr.1? ");
-        Spark.name = myObj.nextLine();
-        Spark.batteryLevel = 85.0;
-        Spark.distanceToPark = 2000;
-        Spark.botType = "A-Bot";
+        System.out.println("Hva heter robot nr.1? ");
+        robotOne.name = myObj.nextLine();
+        robotOne.batteryLevel = 85.0;
+        robotOne.distanceToPark = 2000;
+        robotOne.botType = "A-Bot";
 
-        Robot Shark = new Robot();
-        System.out.println("Hva heter robott nr.2? ");
-        Shark.name = myObj.nextLine();
-        Shark.batteryLevel = 25.0;
-        Shark.distanceToPark = 3340;
-        Shark.botType = "B-Bot";
+        Robot robotTwo = new Robot();
+        System.out.println("Hva heter robot nr.2? ");
+        robotTwo.name = myObj.nextLine();
+        robotTwo.batteryLevel = 25.0;
+        robotTwo.distanceToPark = 3340;
+        robotTwo.botType = "B-Bot";
         // Oppretter to Robot-objekter
         // med navn, f.eks. Dancatron 4000 og Spark-E
         // med botType "B-Bot" og "Toaster"
@@ -113,16 +113,17 @@ public class RobotOppgave {
 
         // Sjekker om robotene kan gå til danseklubben
         // Sjekker om robotene kan gå til parken
-        String status = Spark.giStatus();
+        String status = robotOne.giStatus();
         System.out.println(status);
-        Spark.gaaTilParken(dagensVerden);
-        Spark.gaaTilDanseklubb(dagensVerden, Spark);
+        robotOne.gaaTilParken(dagensVerden);
+        robotOne.gaaTilDanseklubb(dagensVerden, robotOne);
 
         System.out.println("--------------------");
 
-        String statusTwo = Shark.giStatus();
+        String statusTwo = robotTwo.giStatus();
         System.out.println(statusTwo);
-        Shark.gaaTilParken(dagensVerden);
-        Shark.gaaTilDanseklubb(dagensVerden, Shark);
+        robotTwo.gaaTilParken(dagensVerden);
+        robotTwo.gaaTilDanseklubb(dagensVerden, robotTwo);
+        
     }
 }
