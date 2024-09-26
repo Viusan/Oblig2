@@ -1,3 +1,4 @@
+import java.util.Scanner;
 // Klasse for å representere omgivelsene
 class Verden {
     boolean regner;
@@ -90,13 +91,16 @@ public class RobotOppgave {
         dagensVerden.dag = 8;
 
         Robot Spark = new Robot();
-        Spark.name = "Spark-E";
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Hva heter robott nr.1? ");
+        Spark.name = myObj.nextLine();
         Spark.batteryLevel = 85.0;
         Spark.distanceToPark = 2000;
         Spark.botType = "A-Bot";
 
         Robot Shark = new Robot();
-        Shark.name = "Bark-B";
+        System.out.println("Hva heter robott nr.2? ");
+        Shark.name = myObj.nextLine();
         Shark.batteryLevel = 25.0;
         Shark.distanceToPark = 3340;
         Shark.botType = "B-Bot";
